@@ -1,2 +1,2 @@
 # jogo_da_velha
- Jogo da velha feito em linguagem C
+ Jogo da velha desenvolvido em linguagem C
