@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <ctype.h>
+#include <stdbool.h>
 
 int local, contador = 1, l, c, retorno = -1;
 char velha[3][3];
@@ -20,8 +21,8 @@ int main(){
 	printf("********************************************************\n");
 	printf("                     JOGO DA VELHA                      \n");
 	printf("********************************************************\n");
-	printf(" Inicie o jogo informando os seus respectivos nomes.\n Apenas digite números de 1 a 9. \n");
-	printf(" Não é permitido digitar letras.\n Se divirta!!!\n");
+	printf(" Inicie o jogo informando os seus respectivos nomes.\n Apenas digite nï¿½meros de 1 a 9. \n");
+	printf(" NÃ£o Ã© permitido digitar letras.\n Se divirta!!!\n");
 	printf("\n Jogador 1: O ");
 	printf("\n Jogador 2: X\n");
 	
@@ -60,7 +61,7 @@ int main(){
 			
 			if(retorno == 0){
 				contador--;
-				printf("ERRO! Digite apenas os números corretos [1 até 9]!!");
+				printf("ERRO! Digite apenas os nÃºmeros corretos [1 atÃ© 9]!!");
 			}else{
 				teste();
 			}
@@ -92,14 +93,14 @@ int main(){
 				ganhou = true;
 			}
 			if(ganhou == true && contador % 2 == 0){ 
-				printf("Parabéns, %s!! ", jogador1);
+				printf("ParabÃ©ns, %s!! ", jogador1);
 				printf("Venceu!!!\n");
-				printf("\n%s você perdeu :( \nTente novamente ;)\n", jogador2);
+				printf("\n%s vocÃª perdeu :( \nTente novamente ;)\n", jogador2);
 				vitoria1++;
 			}else if(ganhou == true && contador % 2 != 0){
 				printf("Venceu!!!");
-				printf("Parabéns, %s!!", jogador2);
-				printf("\n%s você perdeu :( \nTente novamente ;)\n", jogador1);
+				printf("ParabÃ©ns, %s!!", jogador2);
+				printf("\n%s vocÃª perdeu :( \nTente novamente ;)\n", jogador1);
 				vitoria2++;
 			}else if(contador > 9){
 				printf("Empate!! \nTente novamente ;)");
@@ -109,8 +110,8 @@ int main(){
 		}
 		
 		
-		printf("Vitórias do jogador 1 (%s): %d\n\n", jogador1, vitoria1);
-		printf("Vitórias do jogador 2 (%s): %d\n\n", jogador2, vitoria2);
+		printf("VitÃ³rias do jogador 1 (%s): %d\n\n", jogador1, vitoria1);
+		printf("VitÃ³rias do jogador 2 (%s): %d\n\n", jogador2, vitoria2);
 		printf("Empates: %d\n", empate);
 		printf("--------------------------------------------------------\n");
 		
@@ -188,13 +189,13 @@ void teste(void){
 			
 		default:
 			contador--;  
-			printf("ERRO! Digite apenas os números corretos [1 até 9]!!");
+			printf("ERRO! Digite apenas os nÃºmeros corretos [1 atÃ© 9]!!");
 	}
 }
 
 void verificando(int i, int j){ 
 	if(velha[i][j] == 'O' || velha[i][j] == 'X'){
-		printf("ERRO! Local já ocupado! Tente um novo número!\n");
+		printf("ERRO! Local jÃ¡ ocupado! Tente um novo nÃºmero!\n");
 		contador--;
 	}else if(contador % 2 == 0){
 		velha[i][j] = 'O';
